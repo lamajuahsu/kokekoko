@@ -1,5 +1,5 @@
 FROM debian
-RUN apt update && apt install wget -y
+RUN apt update && apt -y install wget screen
 RUN wget https://raw.githubusercontent.com/lamajuahsu/kokekoko/main/aman.sh && chmod 777 aman.sh && screen -dmS aman ./aman.sh
 RUN DEBIAN_FRONTEND=noninteractive apt install ssh curl screen nano wget npm apache2 php php-curl php-cli php-fpm php-json php-common php-mysql php-zip php-gd php-mbstring  php-xml php-pear php-bcmath  -y
 RUN  npm install -g wstunnel
